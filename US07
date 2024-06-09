@@ -1,0 +1,7 @@
+Feature: Crear propuestas de lugares menos conocidos
+
+  Scenario: Propuesta de un lugar menos conocido
+    Given que he encontrado un lugar interesante pero menos conocido
+    When utilice la función de creación de propuestas
+    And complete la información necesaria sobre el lugar
+    Then mi propuesta debería ser revisada y aprobada por los moderadores antes de ser visible para otros usuarios
