@@ -1,0 +1,11 @@
+Feature: Registro de nuevo usuario
+
+  Scenario: Registro exitoso de un nuevo usuario
+    Given que soy un usuario nuevo y abro la aplicación por primera vez
+    When me encuentro en la pantalla de inicio
+    And veo claramente la opción de registro
+    And completo el formulario con mi nombre, correo electrónico y contraseña
+    Then al hacer clic en el botón "Registrarse"
+    And se valida mi información
+    And se procesa el registro
+    And se me redirige automáticamente a la página principal para comenzar a explorar lugares y compartir experiencias
