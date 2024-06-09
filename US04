@@ -1,11 +1,14 @@
-Feature: Registro de nuevo usuario
+Feature: Compartir experiencias en lugares visitados
 
-  Scenario: Registro exitoso de un nuevo usuario
-    Given que soy un usuario nuevo y abro la aplicación por primera vez
-    When me encuentro en la pantalla de inicio
-    And veo claramente la opción de registro
-    And completo el formulario con mi nombre, correo electrónico y contraseña
-    Then al hacer clic en el botón "Registrarse"
-    And se valida mi información
-    And se procesa el registro
-    And se me redirige automáticamente a la página principal para comenzar a explorar lugares y compartir experiencias
+  Scenario: Compartir una reseña de un lugar visitado
+    Given que soy un usuario registrado en HangOut
+    When visito un lugar y tengo una experiencia que quiero compartir
+    And escribo una reseña detallada y proporciono calificaciones para diferentes aspectos del lugar
+    Then mi reseña debe aparecer en la página del lugar para que otros usuarios la vean y se beneficien de ella
+
+  Scenario: Error al intentar compartir una reseña sin calificaciones
+    Given que soy un usuario registrado en HangOut
+    When visito un lugar y tengo una experiencia que quiero compartir
+    And escribo una reseña detallada pero no proporciono calificaciones para los aspectos del lugar
+    Then debería ver un mensaje de error indicando que las calificaciones son obligatorias
+    And mi reseña no debería ser publicada hasta completar toda la información requerida
