@@ -1,0 +1,8 @@
+Feature: Compartir contenido en redes sociales
+
+  Scenario: Compartir una experiencia en redes sociales
+    Given que he tenido una experiencia positiva en un lugar y quiero compartirlo con mis amigos en redes sociales
+    When utilice la opción de compartir
+    And seleccione la plataforma de redes sociales deseada
+    Then mi publicación debería incluir un enlace a la página del lugar en HangOut
+    And debería incluir el mensaje que quiera agregar
