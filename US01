@@ -9,3 +9,13 @@ Feature: Registro de nuevo usuario
     And se valida mi información
     And se procesa el registro
     And se me redirige automáticamente a la página principal para comenzar a explorar lugares y compartir experiencias
+
+  Scenario: Error en el registro debido a información incompleta
+    Given que soy un usuario nuevo y abro la aplicación por primera vez
+    When me encuentro en la pantalla de inicio
+    And veo claramente la opción de registro
+    And completo el formulario sin ingresar el correo electrónico
+    Then al hacer clic en el botón "Registrarse"
+    And se valida mi información
+    Then debería ver un mensaje de error indicando que el correo electrónico es obligatorio
+    And no debería ser registrado hasta completar toda la información
