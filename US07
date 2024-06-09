@@ -5,3 +5,10 @@ Feature: Crear propuestas de lugares menos conocidos
     When utilice la función de creación de propuestas
     And complete la información necesaria sobre el lugar
     Then mi propuesta debería ser revisada y aprobada por los moderadores antes de ser visible para otros usuarios
+
+  Scenario: Error al crear una propuesta con información incompleta
+    Given que he encontrado un lugar interesante pero menos conocido
+    When utilice la función de creación de propuestas
+    And no completo toda la información necesaria sobre el lugar
+    Then debería ver un mensaje de error indicando que se requiere más información
+    And mi propuesta no debería ser enviada para revisión hasta completar todos los campos obligatorios
